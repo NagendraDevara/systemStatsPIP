@@ -21,6 +21,13 @@ function anim() {
   ctx.fillStyle = "white";
   ctx.fillRect( 0, 0, source.width, source.height );
   ctx.fillStyle = "black";
-  ctx.fillText( new Date().toTimeString().split(' ')[0], source.width / 2, source.height / 2 );
+//   ctx.fillText( new Date().toTimeString().split(' ')[0], source.width / 2, source.height / 2 );
+  navigator.getBattery().then(battery => {
+    console.log(battery.charging);
+     console.log(battery.level);
+
+     ctx.fillText( battery.level,source.width / 2, source.height / 2 );
+
+})
   requestAnimationFrame( anim );
 }
