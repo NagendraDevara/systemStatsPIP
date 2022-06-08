@@ -21,12 +21,14 @@ function anim() {
   ctx.fillStyle = "white";
   ctx.fillRect( 0, 0, source.width, source.height );
   ctx.fillStyle = "black";
+  ctx.font ="16px Areial";
 //   ctx.fillText( new Date().toTimeString().split(' ')[0], source.width / 2, source.height / 2 );
   navigator.getBattery().then(battery => {
     console.log(battery.charging);
      console.log(battery.level);
 
-     ctx.fillText( battery.level,source.width / 2, source.height / 2 );
+     let stat = [battery.charging,battery.level];
+     ctx.fillText( stat.toString(),source.width / 3, source.height /20);
 
 })
   requestAnimationFrame( anim );
