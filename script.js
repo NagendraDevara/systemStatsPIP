@@ -21,7 +21,7 @@ function anim() {
   ctx.fillStyle = "white";
   ctx.fillRect( 0, 0, source.width, source.height );
   ctx.fillStyle = "black";
-  ctx.font ="16px Areial";
+  ctx.font ="16px Arial";
 //   ctx.fillText( new Date().toTimeString().split(' ')[0], source.width / 2, source.height / 2 );
   navigator.getBattery().then(battery => {
     console.log(battery.charging);
